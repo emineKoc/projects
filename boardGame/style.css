@@ -26,7 +26,7 @@ body {
 }
 
 
-#players {
+#step0 {
   width: 175px;
   height: 50px;
   background-color: #239CB9;
@@ -58,14 +58,41 @@ h1 {
 }
 
 button {
-  position: absolute;
-  top:100px;
-  left: 450px;
   width: 100px;
-  height: 30px;
-  font-size: 20px;
-  font-family: Century Gothic;
-  font-weight: bold;
-  background-color: blue;
-  color: white;
+  height: 50px;
+  background-color: #239CB9;
+  border-radius: 25px;
+  padding: 15px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 18px;
+  font-size: 14pt;
+  font-family: century;
+}
+
+#reset {
+  width: 100px;
+  height: 50px;
+  background-color: #239CB9;
+  border-radius: 25px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 18px;
+  font-size: 14pt;
+  font-family: century;
+}
+
+#message {
+   background-color: #FCEEBD;
+   font-family: century gothic;
+   font-weight: bold;
+   font-size: 25pt;
+   color:blue;
+   position: fixed;
+   top:100px;
+   left:95px;
+   width: 150px;
+   height: 200px;
+   padding: 10px;
+   display: none;
 }
