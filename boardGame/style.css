@@ -1,0 +1,71 @@
+body {
+  background-image: url('./img/background.jpg')
+}
+
+
+.steps {
+  background-color: #239CB9;
+   width: 100px;
+   height: 100px;
+   /*position: relative;;;*/
+   z-index: 5555;
+}
+
+#boardTable {
+  margin:auto;
+  padding: 40px;
+}
+
+#board {
+  background-color: white;
+  width: 700px;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  border-radius: 50px;
+}
+
+
+#players {
+  width: 175px;
+  height: 50px;
+  background-color: #239CB9;
+  border-radius: 25px;
+  padding: 15px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 21px;
+}
+
+
+#rollDice {
+  width: 175px;
+  height: 100px;
+  background-color: #239CB9;
+  border-radius: 25px;
+  padding: 15px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 28px
+}
+
+
+h1 {
+  font-size: 30px;
+  font-family: Century Gothic;
+  text-align: center;
+  color: purple;
+}
+
+button {
+  position: absolute;
+  top:100px;
+  left: 450px;
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  font-family: Century Gothic;
+  font-weight: bold;
+  background-color: blue;
+  color: white;
+}
