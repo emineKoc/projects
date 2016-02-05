@@ -1,0 +1,155 @@
+body {
+  background-image: url('./img/background.jpg')
+}
+
+
+.steps {
+  background-color: #239CB9;
+   width: 100px;
+   height: 100px;
+   /*position: relative;;;*/
+   z-index: 5555;
+}
+
+#boardTable {
+  margin:auto;
+  padding: 40px;
+}
+
+#board {
+  background-color: white;
+  width: 700px;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  border-radius: 50px;
+}
+
+
+#step0 {
+  width: 175px;
+  height: 50px;
+  background-color: #239CB9;
+  border-radius: 25px;
+  padding: 15px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 21px;
+}
+
+
+#rollDice {
+  width: 175px;
+  height: 100px;
+  background-color: #239CB9;
+  border-radius: 25px;
+  padding: 15px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 28px
+}
+
+
+h1 {
+  font-size: 30px;
+  font-family: Century Gothic;
+  text-align: center;
+  color: purple;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  background-color: #239CB9;
+  border-radius: 25px;
+  padding: 15px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 18px;
+  font-size: 14pt;
+  font-family: century;
+}
+
+#reset {
+  width: 100px;
+  height: 50px;
+  background-color: #239CB9;
+  border-radius: 25px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 18px;
+  font-size: 14pt;
+  font-family: century;
+}
+
+#message {
+  /*I took the shadow effect code from https://css-tricks.com/snippets/css/css-box-shadow/*/
+  	-webkit-box-shadow: 0 15px 25px -6px black;
+  	   -moz-box-shadow: 0 15px 25px -6px black;
+  	        box-shadow: 0 15px 25px -6px black;
+            /*======*/
+   background-color: #e2e2e1;
+   width:800px;
+   height: 500px;
+   font-family: century gothic;
+   font-weight: bold;
+   font-size: 25pt;
+   color:blue;
+   position: relative;
+   top: -800px;
+   left: 240px;
+   padding: 50px;
+   display: none;
+}
+
+.mTitle {
+  color: #036CB9;
+font-family: 'Fira Sans', sans-serif;
+text-align: center;
+font-size: 35px;
+margin: auto;
+} 
+
+.challenges {
+/*I took the shadow effect code from https://css-tricks.com/snippets/css/css-box-shadow/*/
+	-webkit-box-shadow: 0 15px 25px -6px black;
+	   -moz-box-shadow: 0 15px 25px -6px black;
+	        box-shadow: 0 15px 25px -6px black;
+          /*======*/
+  width:300px;
+  height: 300px;
+  background-color: #e6e6e6;
+  border-radius: 25px;
+  /*display: none;*/
+  position: relative;
+  margin: -700px auto;
+  padding: 30px;
+  font-family: century gothic;
+  font-size: 15pt;
+  display: none;
+}
+
+input {
+  width: 175px;
+  height: 30px;
+  float: left;
+  font-size: 10pt;
+}
+
+#step3, #step13 , #step20{
+   background-image: url('./img/q.png')
+}
+#step15 {
+  background-image: url('./img/time.png')
+}
+
+#step6 , #step18 {
+   background-image: url('./img/game1.png')
+}
+
+#step8 {
+  background-image: url('./img/luck.png')
+}
+#step11 {
+  background-image: url('./img/hangmn.png')
+}

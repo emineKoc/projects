@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="style.css">
+    <title>LETS PLAY </title>
+  </head>
+    <body>
+    <header>
+    <h1> GET THE JOB </h1>
+   </header>
+
+     <div id = "board">
+       <div id = "step0">
+        <table> <tr>
+              <td><div id ="player1"><img src="./img/players/player1.png"  height="55" width="60"> </div> </td>
+              <td><div id ="player2"><img src="./img/players/player2.png"  height="55" width="60"> </div><td>
+        </tr></table>
+      </div>
+       <div id = "rollDice">
+         <div id="diceBox">
+           <p id="roll">Roll</p>
+           <img id = "dice" src= "./img/dice/1.gif">
+         </div>
+       </div>
+       <div>
+       <button id= "reset"><a href='file:///Users/eminekoc/dev/projects/boardGame/index.html'>RESET</a></button>
+       <button id= "start">START</button>
+
+          </div>
+
+
+     <table id='boardTable'>
+
+    <tr>
+      <td><div class="steps" id = "step1"></div></td>
+      <td><div class="steps" id = "step2"></div></td>
+      <td><div class="steps" id = "step3"></div></td>
+      <td><div class="steps" id = "step4"></div></td>
+      <td><div class="steps" id = "step5"></div></td>
+      <td><div class="steps" id = "step6"></div></td>
+    </tr>
+    <tr>
+      <td colspan ='5'><div></div></td>
+      <td><div class="steps" id = "step7"></div></td>
+    </tr>
+    <tr>
+      <td><div class="steps" id = "step13"></div></td>
+      <td><div class="steps" id = "step12"></div></td>
+      <td><div class="steps" id = "step11"></div></td>
+      <td><div class="steps" id = "step10"></div></td>
+      <td><div class="steps" id = "step9"></div></td>
+      <td><div class="steps" id = "step8"></div></td>
+
+    </tr>
+    <tr>
+      <td><div class="steps" id = "step14"></div></td>
+      <td colspan ='5'><div></div></td>
+    </tr>
+    <tr>
+      <td><div class="steps" id = "step15"></div></td>
+      <td><div class="steps" id = "step16"></div></td>
+      <td><div class="steps" id = "step17"></div></td>
+      <td><div class="steps" id = "step18"></div></td>
+      <td><div class="steps" id = "step19"></div></td>
+      <td><div class="steps" id = "step20"></div></td>
+    </tr>
+
+     </table>
+     </div>
+
+      <div class = "challenges" id="challen1">
+      <p> <b>step3</b> <br>z  Please check following function. </p>
+      <p> var x = 3; <br> function foo(x) { <br> return x*2 <br>  }</p>
+       <p style="font-weight:bold">What is the value of 'x' now?  </p>
+       <input type="text" id="challenge1Answer" placeholder="Type your answer here" autofocus>
+      </div>
+
+      <div class = "challenges" id="challen2">
+      <p> <b>step13</b> <br>A ____________ is an inner function that has access to the variables in the outer (enclosing) function’s scope chain. </p>
+      <p> Please fill the blank </p>
+       <input type="text" id="challenge2Answer" placeholder="Type your answer here" autofocus>
+      </div>
+
+
+      <div class = "challenges" id="challen3">
+      <p> <b>step20</b> <br>What will the code below output to the console?</p>
+      <p> console.log(1 +  "2" + "2");</p>
+       <input type="text" id="challenge3Answer" placeholder="Type your answer here" autofocus>
+      </div>
+
+
+
+      <!-- <div id="message">
+        <p class = "mTitle"> Whoever gets higher score from the dice <br> will start first.</p>
+        <div id="diceBox">
+          <div id = "startRoll">Roll THE DICE</div>
+          <img class = "mTitle" id = "dice" src= "./img/dice/1.gif">
+        </div>
+      </div>
+
+      </div> -->
+
+
+
+
+      <div id ='winner'> </div>
+
+
+    <script type="text/javascript" src="jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
