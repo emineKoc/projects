@@ -1,8 +1,8 @@
 $(document).ready(function() {
-
+  $('#message').slideToggle();
 
 $('button').on('click',function(){
-    var  $message = $('#message')
+    var  $message =
     $message.slideToggle();
     $message.html('Each Player ');
 });
