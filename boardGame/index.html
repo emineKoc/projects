@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
+
     <title> Board Game </title>
   </head>
     <body>
     <header>
-    <h1> Lets play the game </h1>
+    <h1> Board Game</h1>
    </header>
 
      <div id = "board">
@@ -68,12 +69,14 @@
      </table>
      </div>
 
-      <div class = "challenges" id="challen1">
-      <p> Please check following function. </p>
-      <p> var x = 3; <br> function foo(x) { <br> return x*2 <br>  }</p>
-      <p style="font-weight:bold">What is the value of 'x' now?  </p>
-      <input type="text" id="challenge1Answer" placeholder="Type your answer here" autofocus>
-      </div>
+     <div class = "challenges" id="challen1">
+       <div>
+         <p> Please check following function. </p>
+         <p> var x = 3; <br> function foo(x) { <br> return x*2 <br>  }</p>
+         <p style="font-weight:bold">What is the value of 'x' now?  </p>
+         <input type="text" id="challenge1Answer" placeholder="Type your answer here" autofocus>
+       </div>
+     </div>
 
       <div class = "challenges" id="challen2">
       <p> A ____________ is an inner function that has access to the variables in the outer (enclosing) function’s scope chain. </p>
@@ -91,24 +94,39 @@
 
 
 
-      
+      <div class = "challenges" id="timeManagement">
 
-
-      <div id="message">
-           <div id ="messageText">
-           <p >Luck is what happens when preparation meets opportunity.</p>
-           <span>Seneca</span>
-           <br>
-           <br>
-           <div><p> Good Luck</p></div>
-          </div>
-
-           <button id= "start">START</button>
 
       </div>
 
 
-      <div id ='winner'> </div>
+
+
+
+
+
+
+      <div>
+      <div id="message" >
+
+           <div id ="messageText">
+           <p><b>Luck is what happens when preparation meets opportunity.</b></p>
+           <span>Seneca</span>
+           <br>
+           <br>
+           <p>Good Luck</p>
+           <span style="color:red">Please click on start button and choose your player</span>
+           <br><br><br>
+           <button id= "start"> START</button>
+           </div>
+
+
+      </div>
+    </div>
+
+      <div id ='winner' class = "challenges">
+      Congrulations!!! <br> You win!!!!
+        </div>
 
 
     <script type="text/javascript" src="jquery-2.2.0.min.js"></script>
