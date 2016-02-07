@@ -10,17 +10,17 @@
     <header>
     <h1> Board Game</h1>
    </header>
-
      <div id = "board">
        <div id = "step0">
         <table> <tr>
               <td><div id ="player1"><img src="./img/players/player1.png"  height="55" width="60"> </div> </td>
               <td><div id ="player2"><img src="./img/players/player2.png"  height="55" width="60"> </div><td>
         </tr></table>
+
       </div>
        <div id = "rollDice">
          <div id="diceBox">
-           <p id="roll">Roll</p>
+           <p id="roll">Roll the dice</p>
            <img id = "dice" src= "./img/dice/1.gif">
          </div>
          </div>
@@ -28,7 +28,6 @@
        <button id= "reset"><a href='file:///Users/eminekoc/dev/projects/boardGame/index.html'>RESET</a></button>
 
           </div>
-
 
      <table id='boardTable'>
 
@@ -69,8 +68,8 @@
      </table>
      </div>
 
-     <div class = "challenges" id="challen1">
-       <div>
+     <div class = "challenges" >
+       <div id="challen1">
          <p> Please check following function. </p>
          <p> var x = 3; <br> function foo(x) { <br> return x*2 <br>  }</p>
          <p style="font-weight:bold">What is the value of 'x' now?  </p>
@@ -117,7 +116,7 @@
            <p>Good Luck</p>
            <span style="color:red">Please click on start button and choose your player</span>
            <br><br><br>
-           <button id= "start"> START</button>
+           <button id= "start"><a href="#openModal"> START</a></button>
            </div>
 
 
@@ -127,6 +126,15 @@
       <div id ='winner' class = "challenges">
       Congrulations!!! <br> You win!!!!
         </div>
+
+
+   <div id="openModal" class="modalDialog">
+       <div>	<a href="#close" title="Close" class="close">X</a>
+       <p> Please choose your icon </p>
+       </div>
+   </div>
+
+
 
 
     <script type="text/javascript" src="jquery-2.2.0.min.js"></script>
