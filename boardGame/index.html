@@ -2,34 +2,38 @@
 <html>
   <head>
     <meta charset="utf-8">
+<<<<<<< HEAD
 <link href='https://fonts.googleapis.com/css?family=Fira+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="style.css">
     <title>LETS PLAY </title>
+=======
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title> Board Game </title>
+>>>>>>> dev
   </head>
     <body>
     <header>
-    <h1> GET THE JOB </h1>
+    <h1> Board Game</h1>
    </header>
-
      <div id = "board">
        <div id = "step0">
         <table> <tr>
               <td><div id ="player1"><img src="./img/players/player1.png"  height="55" width="60"> </div> </td>
               <td><div id ="player2"><img src="./img/players/player2.png"  height="55" width="60"> </div><td>
         </tr></table>
+
       </div>
        <div id = "rollDice">
          <div id="diceBox">
-           <p id="roll">Roll</p>
+           <p id="roll">Roll the dice</p>
            <img id = "dice" src= "./img/dice/1.gif">
          </div>
        </div>
        <div>
        <button id= "reset"><a href='file:///Users/eminekoc/dev/projects/boardGame/index.html'>RESET</a></button>
-       <button id= "start">START</button>
 
           </div>
-
 
      <table id='boardTable'>
 
@@ -70,12 +74,23 @@
      </table>
      </div>
 
+<<<<<<< HEAD
       <div class = "challenges" id="challen1">
       <p> <b>step3</b> <br>z  Please check following function. </p>
       <p> var x = 3; <br> function foo(x) { <br> return x*2 <br>  }</p>
        <p style="font-weight:bold">What is the value of 'x' now?  </p>
        <input type="text" id="challenge1Answer" placeholder="Type your answer here" autofocus>
       </div>
+=======
+     <div class = "challenges" id="challen1">
+       <div >
+         <p> Please check following function. </p>
+         <p> var x = 3; <br> function foo(x) { <br> return x*2 <br>  }</p>
+         <p style="font-weight:bold">What is the value of 'x' now?  </p>
+         <input type="text" id="challenge1Answer" placeholder="Type your answer here" autofocus>
+       </div>
+     </div>
+>>>>>>> dev
 
       <div class = "challenges" id="challen2">
       <p> <b>step13</b> <br>A ____________ is an inner function that has access to the variables in the outer (enclosing) function’s scope chain. </p>
@@ -87,7 +102,19 @@
       <div class = "challenges" id="challen3">
       <p> <b>step20</b> <br>What will the code below output to the console?</p>
       <p> console.log(1 +  "2" + "2");</p>
-       <input type="text" id="challenge3Answer" placeholder="Type your answer here" autofocus>
+      <input type="text" id="challenge3Answer" placeholder="Type your answer here" autofocus>
+      </div>
+
+
+      <div id= lucky class="modalDialog">
+      <p> You are so luck, You have 2 bonus move</p>
+      </div>
+
+
+
+      <div class = "challenges" id="timeManagement">
+
+
       </div>
 
 
@@ -105,7 +132,37 @@
 
 
 
-      <div id ='winner'> </div>
+
+      <div>
+      <div id="message" >
+
+           <div id ="messageText">
+           <p><b>Luck is what happens when preparation meets opportunity.</b></p>
+           <span>Seneca</span>
+           <br>
+           <br>
+           <p>Good Luck</p>
+           <span style="color:red">Please click on start button and choose your player</span>
+           <br><br><br>
+           <button id= "start"><a href="#openModal"> START</a></button>
+           </div>
+
+
+      </div>
+    </div>
+
+      <div id ='winner' class = "challenges">
+      Congrulations!!! <br> You win!!!!
+        </div>
+
+
+   <div id="openModal" class="modalDialog">
+       <div>	<a href="#close" title="Close" class="close">X</a>
+       <p> Please choose your player by clicking on the image <br>and then, roll the rice</p>
+       </div>
+   </div>
+
+
 
 
     <script type="text/javascript" src="jquery-2.2.0.min.js"></script>

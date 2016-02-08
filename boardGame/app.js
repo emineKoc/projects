@@ -1,16 +1,22 @@
 $(document).ready(function() {
   $('#message').slideToggle();
+<<<<<<< HEAD
 
 $('button').on('click',function(){
     var  $message =
     $message.slideToggle();
     $message.html('Each Player ');
 });
+=======
 
-choosePlayer();
-$('div').find('#rollDice').on('click', chooseAndMove ) ;
+  $('button').on('click', function(){
+    $('#message').slideToggle();
+  });
 
-/// i should change the player to current player with function
+  choosePlayer();
+>>>>>>> dev
+
+  $('div').find('#rollDice').on('click', chooseAndMove ) ;
 
 
 });   // Onload function ends here.
@@ -20,18 +26,18 @@ $('div').find('#rollDice').on('click', chooseAndMove ) ;
 var currentPlayer = '';
 function choosePlayer(){
 
-      $('#player1').on('click', function(){
-          currentPlayer = '#player1';
-          $('#step1').append($(currentPlayer));
-       return console.log('player 1 has chosen');
-     }) ;
+  $('#player1').on('click', function(){
+    currentPlayer = '#player1';
+    $('#step1').append($(currentPlayer));
+    return ;
+  }) ;
 
-      $('#player2').on('click', function(){
-          currentPlayer = '#player2';
-          $('#step1').append($(currentPlayer));
-          return console.log('player 2 has chosen');
+  $('#player2').on('click', function(){
+    currentPlayer = '#player2';
+    $('#step1').append($(currentPlayer));
+    return ;
 
-      })
+  })
 }
 
 
@@ -39,12 +45,13 @@ function chooseAndMove() {
 
   if (currentPlayer == "#player1") {
     player1.move() ;
+    checkSteps(player1);
     currentPlayer = "#player2" ;
-    checkSteps();
+
   }else if (currentPlayer == "#player2") {
-   player2.move();
-   currentPlayer = "#player1" ;
-   checkSteps();
+    player2.move();
+    checkSteps(player2);
+    currentPlayer = "#player1" ;
 
   };
 
@@ -65,10 +72,9 @@ var dice = {
 
 var numberOfSteps;
 rollThedice = function ()  {
-    numberOfSteps =  Math.floor(Math.random() * 6 +1);
-    $('#dice').attr('src', dice[numberOfSteps] );
-    console.log(numberOfSteps)
-    return numberOfSteps
+  numberOfSteps =  Math.floor(Math.random() * 6 +1);
+  $('#dice').attr('src', dice[numberOfSteps] );
+  return numberOfSteps
 };
 
 
@@ -78,29 +84,40 @@ rollThedice = function ()  {
 
 var Player = function (player) {
 
-this.name = player;
-this.currentStep = 1;
-this.currentTile = '#step0';
+  this.name = player;
+  this.currentStep = 1;
+  this.currentTile = '#step0';
 
-
- this.move = function ( ){
+  this.move = function ( ){
  // I need the result from the dice.  // I need the corrent place of the player
  var movingsteps = rollThedice();
  this.currentStep += movingsteps ;
  this.currentTile = '#step' + this.currentStep.toString();
  $(this.currentTile).append( $( this.name ) ) ;
+ if (this.currentStep > 20 ) {
+   $('#winner').css('display', 'block');
+   $('#winner').append( $( this.name ) );
+   $( this.name ).addClass('winning')
  };
+};
 
- this.nextTurn = function () {
-   if (this.turn = false) {
-     this.turn = true;
-   }else {
-     this.turn= false;
-   }
- };
+}
 
 
 
+
+function winnerMove(x){
+
+  x.currentStep += 2;
+  x.currentTile = '#step' + x.currentStep.toString();
+  $(x.currentTile).append( $( x.name ) ) ;
+}
+
+
+function looserMove(x){
+  x.currentStep -= 2;
+  x.currentTile = '#step' + x.currentStep.toString();
+  $(x.currentTile).append( $( x.name ) ) ;
 }
 
 
@@ -112,96 +129,100 @@ var player2 = new Player('#player2');
 
 
 ///Challenges:
-function checkSteps() {
+function checkSteps(playerx) {
 
-switch ( player1.currentTile || player2.currentTile ) {
+//   currentPlayer  can ve "#player1" or "#player2"
 
-case "#step3"   :
-$('#challen1').css('display', 'block');
+switch ( playerx.currentTile ) {
 
-$('input').on('keydown',function (event) {
-  if (event.keyCode == 13) {
-    console.log('hit enter!' + player1.currentStep ||  player2.currentStep);
-    var answer = $('#challenge1Answer').val()
-    if (answer == '3'){
-      console.log('true');
-      $('#challen1').css('display', 'none');
-    } else {
-      console.log('false')
-      $('#challen1').css('display', 'none');
+  case "#step3"   :
+  $('#challen1').css('display', 'block');
+
+  $('input').on('keydown',function (event) {
+    if (event.keyCode == 13) {
+      var answer = $('#challenge1Answer').val()
+      if (answer == '3'){
+        $('#challen1').css('display', 'none');
+        winnerMove(playerx);
+
+      } else {
+        $('#challen1').css('display', 'none');
+        looserMove(playerx);
+      }
     }
-  }
-});
+  });
 
-break;
+  break;
 
-case "#step13"   :
-$('#challen2').css('display', 'block');
+  case "#step13"   :
+  $('#challen2').css('display', 'block');
 
 
-$('input').on('keydown',function (event) {
-  if (event.keyCode == 13) {
-    console.log('hit enter!'+ player1.currentStep ||  player2.currentStep);
-    var answer1 = $('#challenge2Answer').val()
-    if (answer1 == 'closure'){
-      console.log('true')
-      $('#challen2').css('display', 'none');
-    } else {
-      console.log('false')
-      $('#challen2').css('display', 'none');
+  $('input').on('keydown',function (event) {
+    if (event.keyCode == 13) {
+      var answer1 = $('#challenge2Answer').val()
+      if (answer1 == 'closure'){
+        $('#challen2').css('display', 'none');
+        winnerMove(playerx)
+      } else {
+        $('#challen2').css('display', 'none');
+        looserMove(playerx);
+      }
     }
-  }
-});
+  });
 
-break;
+  break;
 
-case "#step20"   :
-$('#challen3').css('display', 'block');
+  case "#step20"   :
+  $('#challen3').css('display', 'block');
 
-
-$('input').on('keydown',function (event) {
-  if (event.keyCode == 13) {
-    console.log('hit enter!'+ player1.currentStep ||  player2.currentStep );
-    var answer2 = $('#challenge3Answer').val  ()
-    if (answer2 == '122' || "122"){
-      console.log('true');
-      $('#challen3').css('display', 'none');
-    } else {
-      console.log('false');
-      $('#challen3').css('display', 'none');
+  $('input').on('keydown',function (event) {
+    if (event.keyCode == 13) {
+      var answer2 = $('#challenge3Answer').val  ()
+      if (answer2 === '122' || "122"){
+        $('#challen3').css('display', 'none');
+        winnerMove(playerx);
+      } else {
+        $('#challen3').css('display', 'none');
+        looserMove(playerx);
+      }
     }
-  }
-});
+  });
 
-break;
+  break;
 
+  case "#step11"   :   //IMPLEMENT THE HANGMAN
 
-
-case "#step11"   :   //IMPLEMENT THE HANGMAN
-
-break;
+  break;
 
 
-case "#step8"   :   //LUCKY TILE
-
-break;
-
+  case "#step8"   :   //LUCKY TILE
+  winnerMove(playerx);
 
 
-case "#step6"   :    //PICK A AGAME
+  break;
 
 
-break;
+
+  case "#step6"   :    //PICK A AGAME
 
 
-case "#step18"   : // PICK A GAME
+  break;
 
 
-break;
+  case "#step18"   : // PICK A GAME
 
 
-default         :
-console.log("ordinary step");
+  break;
+
+  case "#step20"   : // PICK A GAME
+
+
+  break;
+
+
+  default         :
+  console.log("ordinary step");
 
 } // this is closing swith statement.
 
