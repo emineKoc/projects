@@ -2,7 +2,6 @@ $(document).ready(function() {
   $('#message').slideToggle();
 
   $('button').on('click', function(){
-    console.log('start button hitted')
     $('#message').slideToggle();
   });
 
@@ -21,13 +20,13 @@ function choosePlayer(){
   $('#player1').on('click', function(){
     currentPlayer = '#player1';
     $('#step1').append($(currentPlayer));
-    return console.log('player 1 has chosen');
+    return ;
   }) ;
 
   $('#player2').on('click', function(){
     currentPlayer = '#player2';
     $('#step1').append($(currentPlayer));
-    return console.log('player 2 has chosen');
+    return ;
 
   })
 }
@@ -66,7 +65,6 @@ var numberOfSteps;
 rollThedice = function ()  {
   numberOfSteps =  Math.floor(Math.random() * 6 +1);
   $('#dice').attr('src', dice[numberOfSteps] );
-  console.log(numberOfSteps)
   return numberOfSteps
 };
 
@@ -133,15 +131,12 @@ switch ( playerx.currentTile ) {
 
   $('input').on('keydown',function (event) {
     if (event.keyCode == 13) {
-      console.log('hit enter!');
       var answer = $('#challenge1Answer').val()
       if (answer == '3'){
-        console.log('true');
         $('#challen1').css('display', 'none');
         winnerMove(playerx);
 
       } else {
-        console.log('false');
         $('#challen1').css('display', 'none');
         looserMove(playerx);
       }
@@ -156,14 +151,11 @@ switch ( playerx.currentTile ) {
 
   $('input').on('keydown',function (event) {
     if (event.keyCode == 13) {
-      console.log('hit enter!'+ playerx.currentStep );
       var answer1 = $('#challenge2Answer').val()
       if (answer1 == 'closure'){
-        console.log('true');
         $('#challen2').css('display', 'none');
         winnerMove(playerx)
       } else {
-        console.log('false');
         $('#challen2').css('display', 'none');
         looserMove(playerx);
       }
@@ -177,14 +169,11 @@ switch ( playerx.currentTile ) {
 
   $('input').on('keydown',function (event) {
     if (event.keyCode == 13) {
-      console.log('hit enter!');
       var answer2 = $('#challenge3Answer').val  ()
       if (answer2 === '122' || "122"){
-        console.log('true');
         $('#challen3').css('display', 'none');
         winnerMove(playerx);
       } else {
-        console.log('false');
         $('#challen3').css('display', 'none');
         looserMove(playerx);
       }
@@ -218,7 +207,6 @@ switch ( playerx.currentTile ) {
   break;
 
   case "#step20"   : // PICK A GAME
-  $('#timeManagement').css('display', 'block');
 
 
   break;
