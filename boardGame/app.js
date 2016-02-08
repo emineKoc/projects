@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $('#message').slideToggle();
 
+<<<<<<< HEAD
 $('button').on('click',function(){
     var  $message =
     $message.slideToggle();
@@ -11,6 +12,15 @@ choosePlayer();
 $('div').find('#rollDice').on('click', chooseAndMove ) ;
 
 /// i should change the player to current player with function
+=======
+  $('button').on('click', function(){
+    $('#message').slideToggle();
+  });
+
+  choosePlayer();
+
+  $('div').find('#rollDice').on('click', chooseAndMove ) ;
+>>>>>>> master
 
 
 });   // Onload function ends here.
@@ -20,6 +30,7 @@ $('div').find('#rollDice').on('click', chooseAndMove ) ;
 var currentPlayer = '';
 function choosePlayer(){
 
+<<<<<<< HEAD
       $('#player1').on('click', function(){
           currentPlayer = '#player1';
           $('#step1').append($(currentPlayer));
@@ -32,6 +43,20 @@ function choosePlayer(){
           return console.log('player 2 has chosen');
 
       })
+=======
+  $('#player1').on('click', function(){
+    currentPlayer = '#player1';
+    $('#step1').append($(currentPlayer));
+    return ;
+  }) ;
+
+  $('#player2').on('click', function(){
+    currentPlayer = '#player2';
+    $('#step1').append($(currentPlayer));
+    return ;
+
+  })
+>>>>>>> master
 }
 
 
@@ -39,12 +64,22 @@ function chooseAndMove() {
 
   if (currentPlayer == "#player1") {
     player1.move() ;
+<<<<<<< HEAD
     currentPlayer = "#player2" ;
     checkSteps();
   }else if (currentPlayer == "#player2") {
    player2.move();
    currentPlayer = "#player1" ;
    checkSteps();
+=======
+    checkSteps(player1);
+    currentPlayer = "#player2" ;
+
+  }else if (currentPlayer == "#player2") {
+    player2.move();
+    checkSteps(player2);
+    currentPlayer = "#player1" ;
+>>>>>>> master
 
   };
 
@@ -65,10 +100,16 @@ var dice = {
 
 var numberOfSteps;
 rollThedice = function ()  {
+<<<<<<< HEAD
     numberOfSteps =  Math.floor(Math.random() * 6 +1);
     $('#dice').attr('src', dice[numberOfSteps] );
     console.log(numberOfSteps)
     return numberOfSteps
+=======
+  numberOfSteps =  Math.floor(Math.random() * 6 +1);
+  $('#dice').attr('src', dice[numberOfSteps] );
+  return numberOfSteps
+>>>>>>> master
 };
 
 
@@ -78,17 +119,26 @@ rollThedice = function ()  {
 
 var Player = function (player) {
 
+<<<<<<< HEAD
 this.name = player;
 this.currentStep = 1;
 this.currentTile = '#step0';
 
 
  this.move = function ( ){
+=======
+  this.name = player;
+  this.currentStep = 1;
+  this.currentTile = '#step0';
+
+  this.move = function ( ){
+>>>>>>> master
  // I need the result from the dice.  // I need the corrent place of the player
  var movingsteps = rollThedice();
  this.currentStep += movingsteps ;
  this.currentTile = '#step' + this.currentStep.toString();
  $(this.currentTile).append( $( this.name ) ) ;
+<<<<<<< HEAD
  };
 
  this.nextTurn = function () {
@@ -101,6 +151,32 @@ this.currentTile = '#step0';
 
 
 
+=======
+ if (this.currentStep > 20 ) {
+   $('#winner').css('display', 'block');
+   $('#winner').append( $( this.name ) );
+   $( this.name ).addClass('winning')
+ };
+};
+
+}
+
+
+
+
+function winnerMove(x){
+
+  x.currentStep += 2;
+  x.currentTile = '#step' + x.currentStep.toString();
+  $(x.currentTile).append( $( x.name ) ) ;
+}
+
+
+function looserMove(x){
+  x.currentStep -= 2;
+  x.currentTile = '#step' + x.currentStep.toString();
+  $(x.currentTile).append( $( x.name ) ) ;
+>>>>>>> master
 }
 
 
@@ -112,6 +188,7 @@ var player2 = new Player('#player2');
 
 
 ///Challenges:
+<<<<<<< HEAD
 function checkSteps() {
 
 switch ( player1.currentTile || player2.currentTile ) {
@@ -202,6 +279,102 @@ break;
 
 default         :
 console.log("ordinary step");
+=======
+function checkSteps(playerx) {
+
+//   currentPlayer  can ve "#player1" or "#player2"
+
+switch ( playerx.currentTile ) {
+
+  case "#step3"   :
+  $('#challen1').css('display', 'block');
+
+  $('input').on('keydown',function (event) {
+    if (event.keyCode == 13) {
+      var answer = $('#challenge1Answer').val()
+      if (answer == '3'){
+        $('#challen1').css('display', 'none');
+        winnerMove(playerx);
+
+      } else {
+        $('#challen1').css('display', 'none');
+        looserMove(playerx);
+      }
+    }
+  });
+
+  break;
+
+  case "#step13"   :
+  $('#challen2').css('display', 'block');
+
+
+  $('input').on('keydown',function (event) {
+    if (event.keyCode == 13) {
+      var answer1 = $('#challenge2Answer').val()
+      if (answer1 == 'closure'){
+        $('#challen2').css('display', 'none');
+        winnerMove(playerx)
+      } else {
+        $('#challen2').css('display', 'none');
+        looserMove(playerx);
+      }
+    }
+  });
+
+  break;
+
+  case "#step20"   :
+  $('#challen3').css('display', 'block');
+
+  $('input').on('keydown',function (event) {
+    if (event.keyCode == 13) {
+      var answer2 = $('#challenge3Answer').val  ()
+      if (answer2 === '122' || "122"){
+        $('#challen3').css('display', 'none');
+        winnerMove(playerx);
+      } else {
+        $('#challen3').css('display', 'none');
+        looserMove(playerx);
+      }
+    }
+  });
+
+  break;
+
+  case "#step11"   :   //IMPLEMENT THE HANGMAN
+
+  break;
+
+
+  case "#step8"   :   //LUCKY TILE
+  winnerMove(playerx);
+
+
+  break;
+
+
+
+  case "#step6"   :    //PICK A AGAME
+
+
+  break;
+
+
+  case "#step18"   : // PICK A GAME
+
+
+  break;
+
+  case "#step20"   : // PICK A GAME
+
+
+  break;
+
+
+  default         :
+  console.log("ordinary step");
+>>>>>>> master
 
 } // this is closing swith statement.
 
