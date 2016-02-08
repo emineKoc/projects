@@ -76,25 +76,6 @@ h1 {
 }
 
 #message {
-<<<<<<< HEAD
-  /*I took the shadow effect code from https://css-tricks.com/snippets/css/css-box-shadow/*/
-  	-webkit-box-shadow: 0 15px 25px -6px black;
-  	   -moz-box-shadow: 0 15px 25px -6px black;
-  	        box-shadow: 0 15px 25px -6px black;
-            /*======*/
-   background-color: #e2e2e1;
-   width:800px;
-   height: 500px;
-   font-family: century gothic;
-   font-weight: bold;
-   font-size: 25pt;
-   color:blue;
-   position: relative;
-   top: -800px;
-   left: 240px;
-   padding: 50px;
-   display: none;
-=======
   position: fixed;
   top: 0;
   right: 0;
@@ -130,7 +111,6 @@ h1 {
   background: -moz-linear-gradient(#fff, #999);
   background: -webkit-linear-gradient(#fff, #999);
   background: -o-linear-gradient(#fff, #999);
->>>>>>> dev
 }
 
 .mTitle {
@@ -139,7 +119,7 @@ font-family: 'Fira Sans', sans-serif;
 text-align: center;
 font-size: 35px;
 margin: auto;
-} 
+}
 
 #start {
   width: 150px;
