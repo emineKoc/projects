@@ -1,11 +1,20 @@
 $(document).ready(function() {
   $('#message').slideToggle();
+<<<<<<< HEAD
+
+$('button').on('click',function(){
+    var  $message =
+    $message.slideToggle();
+    $message.html('Each Player ');
+});
+=======
 
   $('button').on('click', function(){
     $('#message').slideToggle();
   });
 
   choosePlayer();
+>>>>>>> dev
 
   $('div').find('#rollDice').on('click', chooseAndMove ) ;
 
